@@ -2,11 +2,11 @@ import { NavLink } from "react-router";
 
 const Header = () => {
   return (
-    <header>
+    <header className="my-6">
       <div className="container">
         <nav className="flex justify-between">
           <p>PhoneBook</p>
-          <div>
+          <div className="flex gap-4">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/contacts">Contacts</NavLink>
             <NavLink to="/register">Register</NavLink>

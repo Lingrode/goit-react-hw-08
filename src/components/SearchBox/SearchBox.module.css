@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  max-width: 396px;
+}
+
+.label {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.input {
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #b3b3b3;
+  padding: 2px 15px 0;
+  font-size: 18px;
+  background-color: bisque;
+  transition: background-color .3s;
+}
+
+.input:focus {
+  border-color: #000;
+  background-color: #ffc181;
+}

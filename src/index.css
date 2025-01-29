@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
   font-size: 1.5em;
@@ -27,4 +29,10 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+.container {
+  max-width: 1500px;
+  padding: 0 30px;
+  margin: 0 auto 50px;
 }

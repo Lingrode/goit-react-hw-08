@@ -1,12 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router";
-import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
-import { logout } from "../../redux/auth/operations";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import Navigation from "../Navigation/Navigation";
+import UserMenu from "../UserMenu/UserMenu";
+import AuthNav from "../AuthNav/AuthNav";
 
 const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
 
   return (
     <header className="my-6">
@@ -14,17 +13,8 @@ const Header = () => {
         <nav className="flex justify-between">
           <p>PhoneBook</p>
           <div className="flex gap-4">
-            {isLoggedIn && <h3>Welcome, {user.name}</h3>}
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/contacts">Contacts</NavLink>
-            {isLoggedIn ? (
-              <button onClick={() => dispatch(logout())}>Logout</button>
-            ) : (
-              <>
-                <NavLink to="/register">Register</NavLink>
-                <NavLink to="/login">Login</NavLink>
-              </>
-            )}
+            <Navigation />
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </div>
         </nav>
       </div>

@@ -7,7 +7,7 @@ const UserMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="flex gap-4">
       <h3>Welcome, {user.name}</h3>
       <button onClick={() => dispatch(logout())}>Logout</button>
     </div>

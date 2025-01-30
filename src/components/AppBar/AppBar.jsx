@@ -11,9 +11,9 @@ const AppBar = () => {
     <header className="my-6">
       <div className="container">
         <nav className="flex justify-between">
-          <p>PhoneBook</p>
+          {/* <p>PhoneBook</p> */}
+          <Navigation />
           <div className="flex gap-4">
-            <Navigation />
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </div>
         </nav>

@@ -6,7 +6,7 @@ const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <div>
+    <div className="flex gap-4">
       <NavLink to="/">Home</NavLink>
       {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
     </div>

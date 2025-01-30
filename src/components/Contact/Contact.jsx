@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 
 import style from "./Contact.module.css";
 

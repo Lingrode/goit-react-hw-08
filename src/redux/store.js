@@ -10,7 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import contactsSlice from "./slices/contactsSlice";
+import contactsSlice from "./contacts/slice";
 import filterSlice from "./slices/filterSlice";
 import authSlice from "./auth/slice";
 

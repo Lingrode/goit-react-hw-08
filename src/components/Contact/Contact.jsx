@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { deleteContact } from "../../redux/contacts/operations";
 
 import style from "./Contact.module.css";
+import { setCurrentContact } from "../../redux/contacts/slice";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,12 @@ const Contact = ({ name, number, id }) => {
       </div>
       <button className={style.btn} onClick={() => dispatch(deleteContact(id))}>
         Delete
+      </button>
+      <button
+        className={style.btn}
+        onClick={() => dispatch(setCurrentContact(id))}
+      >
+        Edit
       </button>
     </div>
   );

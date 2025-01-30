@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 25px 20px;
+  margin-bottom: 50px;
+  position: relative;
+  background-color: #ffc181;
+}
+
+.label {
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+
+.input {
+  margin-bottom: 30px;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #b3b3b3;
+  padding: 0 15px;
+  font-size: 18px;
+  background-color: bisque;
+}
+
+.input:focus {
+  border-color: #000;
+}
+
+.input:last-of-type {
+  margin-bottom: 40px;
+}
+
+.messageName,
+.messageNumber {
+  position: absolute;
+  font-size: 14px;
+  color: rgb(255, 54, 54);
+  font-weight: 600;
+}
+
+.messageName {
+  top: 96px;
+}
+
+.messageNumber {
+  top: 198px;
+}
+
+.btn {
+  display: block;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 7px 15px;
+  cursor: pointer;
+  border: 2px solid #b3b3b3;
+  border-radius: 7px;
+  background-color: bisque;
+  font-size: 16px;
+}

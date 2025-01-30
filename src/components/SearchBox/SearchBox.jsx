@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { changeFilter } from "../../redux/slices/filterSlice";
-import { selectFilter } from "../../redux/contacts/selectors";
+import { setFilter } from "../../redux/filter/slice";
+import { selectFilterValue } from "../../redux/filter/selectors";
 
 import style from "./SearchBox.module.css";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(selectFilter);
+  const filter = useSelector(selectFilterValue);
 
   return (
     <div className={style.wrapper}>
@@ -20,7 +20,7 @@ const SearchBox = () => {
         type="text"
         name="search"
         value={filter}
-        onChange={(event) => dispatch(changeFilter(event.target.value))}
+        onChange={(event) => dispatch(setFilter(event.target.value))}
       />
     </div>
   );

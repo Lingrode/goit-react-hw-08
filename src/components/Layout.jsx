@@ -1,10 +1,10 @@
 import { Outlet } from "react-router";
-import Header from "./Header/Header";
+import AppBar from "./AppBar/AppBar";
 
 const Layout = () => {
   return (
     <>
-      <Header />
+      <AppBar />
       <div className="container">
         <Outlet />
       </div>

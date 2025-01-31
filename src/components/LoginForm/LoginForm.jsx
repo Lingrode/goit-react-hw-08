@@ -1,7 +1,7 @@
 import { useId } from "react";
-import { useNavigate } from "react-router";
-import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
+import { Field, Form, Formik } from "formik";
+
 import { login } from "../../redux/auth/operations";
 
 const initialValues = {
@@ -13,12 +13,9 @@ const LoginForm = () => {
   const emailFieldId = useId();
   const pswFieldId = useId();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = (values, action) => {
-    dispatch(login({ ...values }))
-      .unwrap()
-      .then(() => navigate("/"));
+    dispatch(login({ ...values }));
 
     action.resetForm();
   };

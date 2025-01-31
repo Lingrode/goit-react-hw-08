@@ -3,9 +3,9 @@ import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 import { deleteContact } from "../../redux/contacts/operations";
+import { setCurrentContact } from "../../redux/contacts/slice";
 
 import style from "./Contact.module.css";
-import { setCurrentContact } from "../../redux/contacts/slice";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();

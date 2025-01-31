@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import ContactList from "../components/ContactList/ContactList";
+import SearchBox from "../components/SearchBox/SearchBox";
+import ContactForm from "../components/ContactForm/ContactForm";
+import EditForm from "../components/EditForm/EditForm";
+
+import { fetchContacts } from "../redux/contacts/operations";
 import {
   selectCurrentContact,
   selectError,
   selectLoading,
 } from "../redux/contacts/selectors";
-import ContactList from "../components/ContactList/ContactList";
-import SearchBox from "../components/SearchBox/SearchBox";
-import ContactForm from "../components/ContactForm/ContactForm";
-import { fetchContacts } from "../redux/contacts/operations";
-import EditForm from "../components/EditForm/EditForm";
 
 const Contacts = () => {
   const dispatch = useDispatch();

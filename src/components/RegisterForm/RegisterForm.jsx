@@ -1,7 +1,8 @@
 import { useId } from "react";
 import { useNavigate } from "react-router";
-import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
+import { Field, Form, Formik } from "formik";
+
 import { register } from "../../redux/auth/operations";
 
 const initialValues = {

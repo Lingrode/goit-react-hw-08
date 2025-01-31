@@ -1,15 +1,17 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
-import Layout from "./components/Layout";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import Layout from "./components/Layout";
+import PrivateRoute from "./components/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute";
+
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
-import PrivateRoute from "./components/PrivateRoute";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,12 +32,28 @@ const App = () => {
             <Route
               path="contacts"
               element={
-                <PrivateRoute component={<Contacts />} redirectTo="/contacts" />
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
               }
             />
           </Route>
-          <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute>
+                <Register />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute>
+                <Login />
+              </RestrictedRoute>
+            }
+          />
         </Routes>
       )}
     </>

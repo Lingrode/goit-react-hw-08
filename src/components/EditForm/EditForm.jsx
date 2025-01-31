@@ -4,10 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 import { editContact } from "../../redux/contacts/operations";
-
-import style from "./EditForm.module.css";
 import { selectCurrentContact } from "../../redux/contacts/selectors";
 import { clearCurrentContact } from "../../redux/contacts/slice";
+
+import style from "./EditForm.module.css";
 
 const FormValidation = Yup.object().shape({
   name: Yup.string().min(3, "Too Short!").required("Name is required"),

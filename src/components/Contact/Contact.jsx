@@ -3,16 +3,21 @@ import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Toaster } from "react-hot-toast";
 
+import Modal from "../Modal";
+
 import { deleteContact } from "../../redux/contacts/operations";
 import { setCurrentContact } from "../../redux/contacts/slice";
+import useToggle from "../../hooks/useToggle";
 
 import style from "./Contact.module.css";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+  const { isOpen, open, close } = useToggle();
 
   const handleDelete = () => {
     dispatch(deleteContact(id));
+    close();
   };
 
   return (
@@ -27,9 +32,10 @@ const Contact = ({ name, number, id }) => {
           <p>{number}</p>
         </div>
       </div>
-      <button className={style.btn} onClick={handleDelete}>
+      <button className={style.btn} onClick={open}>
         Delete
       </button>
+      <Modal isOpen={isOpen} close={close} handleDelete={handleDelete} />
       <Toaster
         toastOptions={{
           duration: 6000,

@@ -27,6 +27,14 @@ img {
   margin: 0 auto;
 }
 
+.input-style {
+  @apply rounded-md border-2 border-solid border-[#b3b3b3] px-[15px] text-lg bg-[bisque];
+}
+
+.button-style {
+  @apply cursor-pointer px-10 py-1 border-2 border-solid border-[#b3b3b3] rounded-lg max-w-fit mx-auto bg-[bisque];
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;

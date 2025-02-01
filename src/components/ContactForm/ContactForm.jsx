@@ -42,7 +42,11 @@ const ContactForm = () => {
         <label className={style.label} htmlFor={nameFieldId}>
           Name
         </label>
-        <Field id={nameFieldId} className={style.input} name="name" />
+        <Field
+          id={nameFieldId}
+          className="input-style mb-5 h-[35px]"
+          name="name"
+        />
         <ErrorMessage
           className={style.messageName}
           name="name"
@@ -52,7 +56,11 @@ const ContactForm = () => {
         <label className={style.label} htmlFor={numberFieldId}>
           Number
         </label>
-        <Field id={numberFieldId} className={style.input} name="number" />
+        <Field
+          id={numberFieldId}
+          className="input-style mb-8 h-[35px]"
+          name="number"
+        />
         <ErrorMessage
           className={style.messageNumber}
           name="number"

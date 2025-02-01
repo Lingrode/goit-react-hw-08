@@ -13,7 +13,7 @@ const SearchBox = () => {
     <div className="flex mb-12 gap-10">
       <div className="flex flex-col max-w-[350px] w-full">
         <label className="text-[20px] mb-1" htmlFor="search">
-          Find contacts by name
+          Find contacts
         </label>
         <input
           id="search"
@@ -24,7 +24,7 @@ const SearchBox = () => {
           onChange={(event) => dispatch(setFilter(event.target.value))}
         />
       </div>
-      <p className="self-end">Total conatcts: {contacts.length}</p>
+      <p className="self-end">Total contacts: {contacts.length}</p>
     </div>
   );
 };

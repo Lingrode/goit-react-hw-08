@@ -48,7 +48,11 @@ const EditForm = () => {
         <label className={style.label} htmlFor={nameFieldId}>
           Name
         </label>
-        <Field id={nameFieldId} className={style.input} name="name" />
+        <Field
+          id={nameFieldId}
+          className="input-style mb-5 h-[35px]"
+          name="name"
+        />
         <ErrorMessage
           className={style.messageName}
           name="name"
@@ -58,23 +62,29 @@ const EditForm = () => {
         <label className={style.label} htmlFor={numberFieldId}>
           Number
         </label>
-        <Field id={numberFieldId} className={style.input} name="number" />
+        <Field
+          id={numberFieldId}
+          className="input-style mb-8 h-[35px]"
+          name="number"
+        />
         <ErrorMessage
           className={style.messageNumber}
           name="number"
           component="span"
         />
 
-        <button className={style.btn} type="submit">
-          Edit
-        </button>
-        <button
-          className={style.btn}
-          type="button"
-          onClick={() => dispatch(clearCurrentContact())}
-        >
-          Cancel
-        </button>
+        <div className="flex justify-center gap-10">
+          <button className={style.btn} type="submit">
+            Edit
+          </button>
+          <button
+            className={style.btn}
+            type="button"
+            onClick={() => dispatch(clearCurrentContact())}
+          >
+            Cancel
+          </button>
+        </div>
       </Form>
     </Formik>
   );

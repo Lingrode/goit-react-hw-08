@@ -21,20 +21,30 @@ const Contact = ({ name, number, id }) => {
   };
 
   return (
-    <div className={style.card}>
-      <div className={style.wrapper}>
-        <div className={style.name}>
-          <FaUser />
-          <p>{name}</p>
+    <div className="border-2 border-solid border-black rounded-xl p-4 bg-[#ffc181]">
+      <div className="flex flex-col ">
+        <div className="flex flex-col gap-2.5 mb-5">
+          <div className={style.name}>
+            <FaUser />
+            <p>{name}</p>
+          </div>
+          <div className={style.number}>
+            <FaPhoneAlt />
+            <p>{number}</p>
+          </div>
         </div>
-        <div className={style.number}>
-          <FaPhoneAlt />
-          <p>{number}</p>
+        <div className="flex gap-8 self-end">
+          <button className={style.btn} onClick={open}>
+            Delete
+          </button>
+          <button
+            className={style.btn}
+            onClick={() => dispatch(setCurrentContact(id))}
+          >
+            Edit
+          </button>
         </div>
       </div>
-      <button className={style.btn} onClick={open}>
-        Delete
-      </button>
       <Modal isOpen={isOpen} close={close} handleDelete={handleDelete} />
       <Toaster
         toastOptions={{
@@ -44,12 +54,6 @@ const Contact = ({ name, number, id }) => {
           },
         }}
       />
-      <button
-        className={style.btn}
-        onClick={() => dispatch(setCurrentContact(id))}
-      >
-        Edit
-      </button>
     </div>
   );
 };

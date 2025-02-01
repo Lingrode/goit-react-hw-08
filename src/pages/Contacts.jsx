@@ -12,6 +12,7 @@ import {
   selectError,
   selectLoading,
 } from "../redux/contacts/selectors";
+import Loader from "../components/Loader";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const Contacts = () => {
     <div>
       {isEdit ? <EditForm /> : <ContactForm />}
       <SearchBox />
-      <div>{isLoading && "Request in progress..."}</div>
+      <div>{isLoading && <Loader />}</div>
       <ContactList />
       {isError && <h2>Something went wrong!</h2>}
     </div>

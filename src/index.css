@@ -30,5 +30,6 @@ img {
 @layer base {
   :root {
     --radius: 0.5rem;
+    --card-width: calc(1440px / 3 - 30px);
   }
 }

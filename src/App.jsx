@@ -12,6 +12,7 @@ import RestrictedRoute from "./components/RestrictedRoute";
 
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
+import Loader from "./components/Loader";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ const App = () => {
   return (
     <>
       {isRefreshing ? (
-        <h2>Refresh user...</h2>
+        <h2>
+          <Loader />
+        </h2>
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>

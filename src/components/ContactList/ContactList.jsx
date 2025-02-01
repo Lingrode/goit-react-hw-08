@@ -4,16 +4,14 @@ import Contact from "../Contact/Contact";
 
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
 
-import style from "./ContactList.module.css";
-
 const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
 
   return (
-    <ul className={style.list}>
+    <ul className="flex flex-wrap gap-[30px]">
       {filteredContacts.map(({ id, name, number }) => {
         return (
-          <li className={style.item} key={id}>
+          <li className="max-w-[var(--card-width)] w-full" key={id}>
             <Contact name={name} number={number} id={id} />
           </li>
         );

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const Modal = ({ isOpen, close, handleDelete }) => {
   useEffect(() => {
@@ -40,6 +41,12 @@ const Modal = ({ isOpen, close, handleDelete }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  close: PropTypes.func,
+  handleDelete: PropTypes.func,
 };
 
 export default Modal;

@@ -1,9 +1,9 @@
 import { useId } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router";
 import { Field, Form, Formik } from "formik";
 
 import { login } from "../../redux/auth/operations";
-import { Link } from "react-router";
 
 const initialValues = {
   email: "",

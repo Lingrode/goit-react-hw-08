@@ -21,7 +21,7 @@ const Contact = ({ name, number, id }) => {
   };
 
   return (
-    <div className="border-2 border-solid border-black rounded-xl p-4 bg-[#ffc181]">
+    <div className="border-2 border-solid bg-base-200 rounded-xl p-4 text-base-content shadow-lg">
       <div className="flex flex-col ">
         <div className="flex flex-col gap-2.5 mb-5">
           <div className={style.name}>
@@ -33,12 +33,12 @@ const Contact = ({ name, number, id }) => {
             <p>{number}</p>
           </div>
         </div>
-        <div className="flex gap-8 self-end">
-          <button className={style.btn} onClick={open}>
+        <div className="flex gap-6 self-end">
+          <button className="btn btn-outline btn-error" onClick={open}>
             Delete
           </button>
           <button
-            className={style.btn}
+            className="btn btn-outline"
             onClick={() => dispatch(setCurrentContact(id))}
           >
             Edit

@@ -135,7 +135,7 @@ const LoginForm = () => {
               </Link>
             </p>
 
-            <button className="btn btn-lg btn-accent" type="submit">
+            <button className="btn btn-lg btn-soft btn-accent" type="submit">
               Login
             </button>
           </Form>

@@ -37,7 +37,7 @@ const LoginForm = () => {
         validationSchema={validationSchema}
       >
         {({ touched, errors }) => (
-          <Form className="max-w-[450px] w-full flex flex-col justify-center rounded-lg px-10 py-15 bg-white shadow-xl relative">
+          <Form className="max-w-[450px] w-full flex flex-col justify-center rounded-lg px-10 py-15 bg-white shadow-xl relative text-accent">
             <label className="mb-1" htmlFor={emailFieldId}>
               E-mail
             </label>

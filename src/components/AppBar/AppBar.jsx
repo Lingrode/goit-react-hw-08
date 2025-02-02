@@ -10,10 +10,9 @@ const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <header className="py-6 mb-10 bg-[#ffc181]">
+    <header className="py-6 mb-10 bg-base-300 text-accent border-b-accent border-b-2">
       <div className="container">
         <nav className="flex justify-between">
-          {/* <p>PhoneBook</p> */}
           <Navigation />
           <div className="flex gap-4">
             {isLoggedIn ? <UserMenu /> : <AuthNav />}

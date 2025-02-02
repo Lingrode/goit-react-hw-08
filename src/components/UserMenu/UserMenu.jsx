@@ -8,9 +8,12 @@ const UserMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex gap-4">
-      <h3>Welcome, {user.name}</h3>
-      <button className="cursor-pointer" onClick={() => dispatch(logout())}>
+    <div className="flex justify-center items-center gap-4">
+      <h3 className="text-2xl font-semibold">Welcome, {user.name}</h3>
+      <button
+        className="btn btn-ghost text-xl"
+        onClick={() => dispatch(logout())}
+      >
         Logout
       </button>
     </div>

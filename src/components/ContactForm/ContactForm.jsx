@@ -85,7 +85,7 @@ const ContactForm = () => {
           />
 
           <label className="mb-1 text-xl" htmlFor={numberFieldId}>
-            Number
+            Phone
           </label>
           <Field name="number">
             {({ field }) => (

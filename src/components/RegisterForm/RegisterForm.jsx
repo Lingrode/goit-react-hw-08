@@ -43,7 +43,7 @@ const RegisterForm = () => {
         validationSchema={validationSchema}
       >
         {({ touched, errors }) => (
-          <Form className="max-w-[500px] w-full flex flex-col rounded-lg px-10 py-15 relative bg-white shadow-xl">
+          <Form className="max-w-[500px] w-full flex flex-col rounded-lg px-10 py-15 relative bg-white shadow-xl text-accent">
             <label className="mb-1" htmlFor={nameFieldId}>
               Name
             </label>

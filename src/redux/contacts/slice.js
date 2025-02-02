@@ -14,6 +14,15 @@ const initialState = {
   error: null,
 };
 
+const handlePending = (state) => {
+  state.loading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.loading = false;
+  state.error = action.payload;
+};
+
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -29,45 +38,32 @@ const contactsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(addContact.pending, (state) => {
-        state.loading = true;
-      })
+      .addCase(addContact.pending, handlePending)
       .addCase(addContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
         state.loading = false;
       })
-      .addCase(addContact.rejected, (state, action) => {
-        state.error = action.payload;
-        state.loading = false;
-      })
-      .addCase(fetchContacts.pending, (state) => {
-        state.loading = true;
-      })
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(fetchContacts.pending, handlePending)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
       })
-      .addCase(fetchContacts.rejected, (state, action) => {
-        state.error = action.payload;
-        state.loading = false;
-      })
-      .addCase(deleteContact.pending, (state) => {
-        state.loading = true;
-      })
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter(
           (item) => item.id !== action.payload.id
         );
         state.loading = false;
       })
-      .addCase(deleteContact.rejected, (state, action) => {
-        state.error = action.payload;
-        state.loading = false;
-      })
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(editContact.pending, handlePending)
       .addCase(editContact.fulfilled, (state, action) => {
         state.items = state.items.map((item) =>
           item.id === action.payload.id ? { ...action.payload } : item
         );
+        state.loading = false;
       })
       .addCase(logout.fulfilled, (state) => {
         state.items = [];

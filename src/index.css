@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark,
+    cupcake;
+}
 
 body {
   font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
@@ -6,7 +12,6 @@ body {
   line-height: 1.5;
   color: #2b2b2b;
   margin: 0;
-  background-color: bisque;
 }
 
 ul,
